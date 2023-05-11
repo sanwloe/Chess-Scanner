@@ -1,0 +1,40 @@
+﻿<Window x:Class="Chess_Scanner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chess_Scanner"
+        mc:Ignorable="d" Height="450" Width="800" Background="#FF312F2F" WindowStyle="None" ResizeMode="NoResize" MouseLeftButtonDown="Window_MouseLeftButtonDown" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="menu_Button" x:Name="menu_button" >
+            <Setter Property="Height" Value="45"></Setter>
+            <Setter Property="Background" Value="DarkGray"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="203*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="153*"/>
+            <ColumnDefinition Width="647*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel x:Name="Header" Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" Width="800">
+            <Button x:Name="Button_Window_Hide" Height="60" Margin="700,0,0,0" Width="50" Foreground="White" FontSize="45" VerticalAlignment="Bottom" Click="Button_Window_Hide_Click">_</Button>
+            <Button x:Name="Button_Close" Margin="0,0,0,0" Height="55" Width="50" Foreground="White" FontSize="45" VerticalAlignment="Bottom" Click="Button_Close_Click">X</Button>
+        </StackPanel>
+        
+        <TextBlock x:Name="Main_TextBlock" Grid.Column="0" Grid.Row="0" Foreground="White" FontSize="14px" Text="Chess Scanner 1.1"></TextBlock>
+        <StackPanel x:Name="Main_Menu1" Grid.Row="1" Grid.Column="0">
+            <Button x:Name="Button_Managment" Content="Управління" Style="{StaticResource menu_Button}" Click="Button_Managment_Click"></Button>
+            <Button x:Name="Button_Results" Content="Результати" Style ="{StaticResource menu_Button}" Click="Button_Results_Click"></Button>
+            <Button x:Name="Button_Options" Content="Налаштування" Style="{StaticResource menu_Button}" Click="Button_Options_Click"></Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Frame BorderThickness="1px" BorderBrush="Black" Name="Main_Frame1" Background="FloralWhite" NavigationUIVisibility="Hidden" Grid.Row="1" HorizontalAlignment="Center" Height="405" Width="647" Grid.Column="1"/>
+        </StackPanel>
+    </Grid>
+</Window>
